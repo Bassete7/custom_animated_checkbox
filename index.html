@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Animated Checkbox</title>
+</head>
+
+<style>
+    *,::before,::after{
+        padding: 0;
+        margin: 0;
+        box-sizing: inherit;
+    }
+    html{
+        font-size: 62.5%;
+        box-sizing: border-box;
+    }
+    body{
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container input{
+        position: relative;
+        width: 15rem;
+        height: 7rem;
+        appearance: none;
+        border-radius: 10rem;
+        background-color: #dededeb7;
+        transition: all .4s ease;
+    }
+    .container input::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 7rem;
+        height: 7rem;
+        border-radius: 100%;
+        transform: scale(1.1);
+        box-shadow: 0 .3rem .5rem rgba(183, 183, 183, 0.636);
+        background-color: #fff;
+        cursor: pointer;
+        transition: all .4s ease-out;
+    }
+    .container input:checked::before{
+        left: 51%;
+    }
+    .container input:checked{
+        background-color: #2262f6;
+        transition-delay: .3s;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <input type="checkbox">
+    </div>
+</body>
+</html>
